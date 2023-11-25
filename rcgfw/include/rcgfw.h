@@ -4,7 +4,9 @@
 #include "defs.h"
 #include "types.h"
 
-void rcgfwInit(void);
+#include "display.h"
+
+void rcgfwInit(RCGFWdisplayProps props);
 void rcgfwClose(void);
 
 #endif
