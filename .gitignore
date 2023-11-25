@@ -1,0 +1,6 @@
+.vscode/
+vendor/
+build/
+*.o
+*.sh
+game/

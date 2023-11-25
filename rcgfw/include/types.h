@@ -1,16 +1,10 @@
-#ifndef RCGFW_TYPE_H
-#define RCGFW_TYPE_H
+#ifndef RCGFW_TYPES_H
+#define RCGFW_TYPES_H
 
-typedef unsigned char RCGFWbool;
-typedef unsigned char RCGFWbyte;
 typedef unsigned int RCGFWuint;
-typedef unsigned short RCGFWword;
+typedef unsigned long long RCGFWsize;
+typedef unsigned char RCGFWbool;
 
-typedef struct rcgfw_display RCGFWdisplay;
-
-typedef struct rcgfw_state {
-    RCGFWdisplay *display;
-    RCGFWbool running;
-} RCGFWstate;
+typedef struct rcgfw_state RCGFWstate;
 
 #endif

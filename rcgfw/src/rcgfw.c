@@ -1,15 +1,39 @@
 #include "rcgfw.h"
 
-#include "display.h"
+#include <stdlib.h>
 
-void rcgfwInit(RCGFWstate *state, const char *title, const RCGFWuint width, const RCGFWuint height)
+struct rcgfw_state
 {
-    state->display = rcgfwCreateDisplay(title, width, height);
-    state->running = RCGFW_FALSE;
+    RCGFWbool running; // deprecated : user creates running variable.
+};
+
+static RCGFWstate state;
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
+    Initialize the engine and all opengl boilerplate
+    Does not link or use shader pogram!!!!
+ */
+void rcgfwInit(void)
+{
+    
 }
 
-void rcgfwClose(RCGFWstate *state)
+/*
+    Clean up all of the allocated memory that the engine has created.
+    Terminate GLFW and destroy GLFW window.
+*/
+void rcgfwClose(void)
 {
-    rcgfwDestroyDisplay(state->display);
-    state->running = RCGFW_FALSE;
+    exit(0);
 }
