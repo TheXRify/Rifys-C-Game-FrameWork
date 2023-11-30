@@ -5,6 +5,8 @@ typedef unsigned int RCGFWuint;
 typedef unsigned long long RCGFWsize;
 typedef unsigned char RCGFWbool;
 
+typedef float RCGFWcolor[3];
+
 typedef struct rcgfw_display_props
 {
     unsigned int width, height;

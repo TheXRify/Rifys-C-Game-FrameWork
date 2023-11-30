@@ -2,6 +2,12 @@
 * [x] Rudimentary error handler
 * [x] Create a display with GLFW
 * [x] Create GL Context with GLAD
-* [ ] Clear the display + Swapping buffers
-* [ ] File IO Wrapper
-* [ ] Resource Manager (Wrapper for File IO)
+* [x] Clear the display + Swapping buffers
+* [x] File IO Wrapper
+
+# RCGFW 0.2 TODO
+* [ ] Shaders
+* [ ] Shader Program
+* [ ] Buffers
+* [ ] VAOs
+* [ ] Rendering

@@ -1,6 +1,13 @@
 #include "rcgfw.h"
 
 #include <stdio.h>
+#include <stdlib.h>
+
+void _rcgfw_critical_error()
+{
+    rcgfwClose();
+    exit(-1);
+}
 
 void _rcgfw_checkError(RCGFWbool condition, const char *msg, void (*callback)())
 {

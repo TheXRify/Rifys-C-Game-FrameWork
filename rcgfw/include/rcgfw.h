@@ -5,6 +5,7 @@
 #include "types.h"
 
 #include "display.h"
+#include "resource.h"
 
 void rcgfwInit(RCGFWdisplayProps props);
 void rcgfwClose(void);

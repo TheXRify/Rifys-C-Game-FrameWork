@@ -4,4 +4,10 @@
 #define RCGFW_FALSE 0
 #define  RCGFW_TRUE 1
 
+#define RCGFW_RESOURCE_PREFIX "res/"
+#define RCGFW_SHADERS_PATH RCGFW_RESOURCE_PREFIX"shaders/"
+#define RCGFW_TEXTURES_PATH RCGFW_RESOURCE_PREFIX"textures/"
+#define RCGFW_SHADER_EXT ".glsl"
+#define RCGFW_TEXTURE_EXT ".png"
+
 #endif

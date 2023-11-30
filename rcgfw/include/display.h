@@ -10,5 +10,7 @@ RCGFWdisplay *rcgfwCreateDisplay(RCGFWdisplayProps props);
 void rcgfwDestroyDisplay(RCGFWdisplay *display);
 
 RCGFWbool rcgfwDisplayShouldClose(void);
+void rcgfwDisplaySwap(void);
+void rcgfwDisplayClear(RCGFWcolor color);
 
 #endif

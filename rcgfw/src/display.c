@@ -84,6 +84,18 @@ RCGFWbool rcgfwDisplayShouldClose(void)
     return glfwWindowShouldClose(_rcgfw_getDisplay(&state)->handle);
 }
 
+void rcgfwDisplaySwap(void)
+{
+    glfwSwapBuffers(_rcgfw_getDisplay(&state)->handle);
+    glfwPollEvents();
+}
+
+void rcgfwDisplayClear(RCGFWcolor color)
+{
+    glClearColor(color[0], color[1], color[2], 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+}
+
 /*
  Running rcgfwClose is redundant as it's too early in the program
  to create anything that requires memory other than the display itself.
