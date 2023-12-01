@@ -7,7 +7,7 @@
 
 # RCGFW 0.2 TODO
 * [x] Shaders
-    - [ ] Allow user to pull a shader from the state
+    - [ ] Allow user to pull a shader from the state (?)
     - [ ] Set uniforms of varying types
 * [ ] Shader Program
 * [ ] Buffers
