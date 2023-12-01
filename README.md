@@ -15,8 +15,9 @@ RCGFW 0.0.1 introduces the GLFW display and OpenGL context to the engine.  This 
     + Does nothing at the moment, will be addressed in v0.0.2
 
 # RCGFW 0.0.2 - Rendering
+RCGFW 0.0.2 introduces shaders, the shader program as well as setting uniforms.  The user can create shaders at runtime through GLSL files that are compiled at runtime by RCGFW's GL framework and 
+
 - Shaders
     + Resource manager loads shader files
     + Shader source code is compiled into a shader
     + Shaders are stored in the framework's state
-    + Shaders can be pulled from the state for easier shader management

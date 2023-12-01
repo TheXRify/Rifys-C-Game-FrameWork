@@ -6,7 +6,9 @@
 * [x] File IO Wrapper
 
 # RCGFW 0.2 TODO
-* [ ] Shaders
+* [x] Shaders
+    - [ ] Allow user to pull a shader from the state
+    - [ ] Set uniforms of varying types
 * [ ] Shader Program
 * [ ] Buffers
 * [ ] VAOs
