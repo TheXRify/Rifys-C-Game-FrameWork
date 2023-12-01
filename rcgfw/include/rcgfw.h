@@ -3,9 +3,10 @@
 
 #include "defs.h"
 #include "types.h"
+#include "resource.h"
 
 #include "display.h"
-#include "resource.h"
+#include "shader.h"
 
 void rcgfwInit(RCGFWdisplayProps props);
 void rcgfwClose(void);

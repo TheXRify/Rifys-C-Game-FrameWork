@@ -10,15 +10,14 @@ extern void _rcgfw_close_file(FILE *file);
 extern void _rcgfw_checkError(RCGFWbool condition, const char *msg, void (*callback)());
 extern void _rcgfw_critical_error();
 
-void rcgfwResourceTest(void)
+const char *rcgfwLoadShader(const char *path)
 {
     size_t size;
-    FILE *file = _rcgfw_open_file_read(RCGFW_SHADERS_PATH"vertex.glsl", &size);
+    FILE *file = _rcgfw_open_file_read(path, &size);
     char *source = calloc(size, sizeof(char));
     _rcgfw_checkError(source == NULL, "[RCGFW] FATAL ERROR -> \"Could not allocate enough memory for an operation!\"", &_rcgfw_critical_error);
     _rcgfw_read_file_source(file, size, source);
-
-    printf("%s\n", source);
-
     _rcgfw_close_file(file);
+
+    return source;
 }

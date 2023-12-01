@@ -10,4 +10,6 @@
 #define RCGFW_SHADER_EXT ".glsl"
 #define RCGFW_TEXTURE_EXT ".png"
 
+#define RCGFW_ARR_SIZE(arr) sizeof(arr) / sizeof(int)
+
 #endif
