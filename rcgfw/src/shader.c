@@ -45,6 +45,8 @@ void rcgfwDestroyShader(void *offset)
     glDeleteShader(shader);
 }
 
+/* INTERNAL RCGFW FUNCTION DEFS */
+
 /* STATIC FUNCTION DEFS */
 
 void _rcgfw_check_shader_compilation(RCGFWshader shader)

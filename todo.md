@@ -7,9 +7,12 @@
 
 # RCGFW 0.0.2 TODO
 * [x] Shaders
-    - [ ] Allow user to pull a shader from the state (?)
+* [x] Shader Program
     - [ ] Set uniforms of varying types
-* [ ] Shader Program
 * [ ] Buffers
 * [ ] VAOs
 * [ ] Rendering
+
+
+# General TODO
+* [ ] Research how many shaders games have on average have (not AAA).
