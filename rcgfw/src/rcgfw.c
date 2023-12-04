@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include <glad/glad.h>
+
 struct rcgfw_state
 {
     RCGFWdisplay *display;
@@ -43,6 +45,16 @@ void rcgfwInit(RCGFWdisplayProps props)
 */
 void rcgfwClose(void)
 {
+    for(int i = 0; i < RCGFW_ARR_SIZE(state.shaders); i++)
+    {
+        glDetachShader(state.program, state.shaders[i]);
+        glDelete(state.shaders[i]);
+    }
+
+    glDeleteProgram(state.program);
+    free(state.shaders);
+    state.shaders = NULL;
+    state.shaderPtr = NULL;
     rcgfwDestroyDisplay(state.display);
     exit(0);
 }
@@ -55,15 +67,6 @@ RCGFWdisplay *_rcgfw_getDisplay(RCGFWstate *state)
 
 void _rcgfw_add_shader(RCGFWshader shader)
 {
-    // (*state.shaderPtr) = shader;
-    // state.shaderPtr ++;
-
-    // size_t size = RCGFW_ARR_SIZE(state.shaders) - 1;
-    // if(state.shaderPtr >= &state.shaders[size])
-    // {
-    //     state.shaders = realloc(state.shaders, sizeof(state.shaders) + (2 * sizeof(int)));
-    // }
-
     size_t size = RCGFW_ARR_SIZE(state.shaders) - 1;
     size_t sizeBytes = sizeof(state.shaders);
     if(state.shaderPtr >= &state.shaders[size])

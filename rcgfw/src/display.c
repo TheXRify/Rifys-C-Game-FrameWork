@@ -8,6 +8,10 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
+#define _RCGFW_WINDOW_HINTS glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3); \
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3); \
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE)
+
 struct rcgfw_display
 {
     unsigned int width, height;
@@ -49,17 +53,15 @@ RCGFWdisplay *rcgfwCreateDisplay(RCGFWdisplayProps props)
 
     // couldn't initialize GLFW
     _rcgfw_checkDisplayError(!glfwInit(), "[RCGFW] FATAL ERROR -> \"Could not initalize GLFW!!\"", disp, &_rcgfw_glfwInitFailure);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+    _RCGFW_WINDOW_HINTS; // define the window hints for the window to create.
 
     (disp->handle) = glfwCreateWindow(disp->width, disp->height, disp->title, NULL, NULL);
     const char *description;
     glfwGetError(&description);
-    if(description != NULL) // glfw debug shit
+    if(description != NULL) // If GLFW cannot create a window, display an error as to why.
         printf("%s\n", description);
     
-    // blud can't create a window with GLFW
+    // cannot create the GLFW display
     _rcgfw_checkDisplayError(disp->handle == NULL, "[RCGFW] FATAL ERROR -> \"Could not create a GLFW window!\"", disp, &_rcgfw_windowCreationFailure);
 
     glfwMakeContextCurrent(disp->handle); // begin creation of opengl context

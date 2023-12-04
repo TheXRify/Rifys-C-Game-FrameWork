@@ -39,3 +39,13 @@ void _rcgfw_close_file(FILE *file)
 {
     fclose(file);
 }
+
+char *_rcgfw_get_full_path(const char *name, const char *prefix)
+{
+    char *path = (char *) calloc(strlen(prefix) + strlen(name) + strlen(".glsl") + 1, sizeof(char));
+    _rcgfw_checkError(path == NULL, "[RCGFW] FATAL ERROR -> \"Could not allocate enough memory for path.\"", &_rcgfw_critical_error);
+    strcpy(path, prefix);
+    strcat(path, name);
+    strcat(path, ".glsl");
+    return path;
+}

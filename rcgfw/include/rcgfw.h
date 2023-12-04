@@ -7,6 +7,7 @@
 
 #include "display.h"
 #include "shader.h"
+#include "program.h"
 
 void rcgfwInit(RCGFWdisplayProps props);
 void rcgfwClose(void);
